@@ -1,0 +1,15 @@
+.notice {
+  display: flex; align-items: center; gap: 9px; margin: -18px 0 24px; padding: 11px 13px; border-radius: 10px;
+}
+
+.notice p {
+  flex: 1; margin: 0; font-size: 0.77rem;
+}
+
+.notice-error {
+  background: #fff1ef; color: #9b4540;
+}
+
+.notice > span {
+  display: grid; width: 19px; height: 19px; place-items: center; border-radius: 50%; background: white; font-weight: 700;
+}

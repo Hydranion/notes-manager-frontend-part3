@@ -1,0 +1,152 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.compact-form {
+  display: grid; gap: 14px;
+}
+
+.compact-form label {
+  display: grid; gap: 7px; color: #53615a; font-size: 0.76rem; font-weight: 650;
+}
+
+.compact-form input, .tag-create-form input {
+  width: 100%; border: 1px solid v.$line; border-radius: 10px; padding: 11px 12px; background: #fcfdfb; color: v.$ink; font: inherit; font-size: 0.82rem;
+}
+
+.compact-form input:focus, .tag-create-form input:focus {
+  @include m.focus-ring; border-color: #9eb9aa; outline-offset: 0;
+}
+
+.manage-grid {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 17px; align-items: start;
+}
+
+.manage-panel {
+  padding: 20px; border: 1px solid v.$line; border-radius: 16px; background: white; box-shadow: v.$shadow-soft;
+}
+
+.panel-heading {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;
+}
+
+.panel-heading > div {
+  display: flex; align-items: center; gap: 10px;
+}
+
+.panel-heading h2 {
+  margin: 0; font-family: Georgia, serif; font-size: 1.16rem; font-weight: 500;
+}
+
+.panel-icon {
+  display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; font-size: 1rem;
+}
+
+.lavender {
+  background: v.$lavender; color: #786ba5;
+}
+
+.mint {
+  background: v.$mint; color: v.$green;
+}
+
+.optional-label {
+  color: #a2aaa5; font-size: 0.65rem; font-weight: 400;
+}
+
+.form-inline-actions {
+  display: flex; justify-content: flex-end; gap: 7px;
+}
+
+.compact-form .button {
+  min-height: 38px; font-size: 0.76rem;
+}
+
+.managed-list {
+  display: grid; margin-top: 19px;
+}
+
+.managed-item {
+  display: flex; align-items: center; gap: 9px; min-height: 59px; border-top: 1px solid #f0f1ee;
+}
+
+.managed-dot {
+  width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: #9dbca7;
+}
+
+.managed-copy {
+  min-width: 0; flex: 1;
+}
+
+.managed-copy strong, .managed-copy small {
+  display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.managed-copy strong {
+  font-size: 0.77rem; font-weight: 650;
+}
+
+.managed-copy small {
+  margin-top: 4px; color: v.$muted; font-size: 0.66rem;
+}
+
+.item-count {
+  flex: 0 0 auto; color: #929d95; font-size: 0.65rem;
+}
+
+.list-placeholder {
+  padding: 19px 0; color: v.$muted; font-size: 0.77rem; line-height: 1.6;
+}
+
+.tag-create-form {
+  display: flex; gap: 7px;
+}
+
+.tag-create-form input {
+  min-width: 0;
+}
+
+.tag-create-form .button {
+  flex: 0 0 auto; min-height: 40px; padding: 0 12px; font-size: 0.74rem;
+}
+
+.tag-cloud {
+  display: flex; flex-wrap: wrap; gap: 8px; padding: 19px 0 10px;
+}
+
+.tag-manage-chip {
+  display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border: 1px solid #e3eee5; border-radius: 8px; background: #f3f8f3; color: #5e7f69; font-size: 0.71rem;
+}
+
+.tag-manage-chip button {
+  display: grid; width: 17px; height: 17px; place-items: center; border: 0; border-radius: 50%; background: transparent; color: #8c9b8f; cursor: pointer;
+}
+
+.tag-manage-chip button:hover {
+  background: #e8ece5; color: v.$danger;
+}
+
+.tag-hint {
+  display: flex; gap: 9px; margin-top: 17px; padding: 12px; border-radius: 11px; background: #f7f6f0; color: #7a765f;
+}
+
+.tag-hint > span {
+  color: #aa9656;
+}
+
+.tag-hint p {
+  margin: 0; font-size: 0.69rem; line-height: 1.55;
+}
+
+.tag-hint b {
+  color: #687b68; font-weight: 600;
+}
+
+@media (max-width: 850px) {
+  .manage-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .manage-panel { padding: 16px; }
+.managed-item { gap: 5px; }
+.item-count { display: none; }
+}

@@ -1,0 +1,15 @@
+node_modules/
+.pnpm-store/
+dist/
+.env*
+!.env.example
+.DS_Store
+coverage/
+.local/
+.pnpm-realpath-compat.cjs
+__pycache__/
+
+docs/rendered*/
+docs/make_contact.py
+docs/__pycache__/
+docs/

@@ -1,0 +1,80 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.eyebrow {
+  margin: 0; color: #a0a8a2; font-size: 0.59rem; font-weight: 750; letter-spacing: 0.15em;
+}
+
+.welcome-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 40px;
+}
+
+.page-kicker {
+  margin: 0 0 10px; color: #97a49b; font-size: 0.62rem; font-weight: 750; letter-spacing: 0.14em;
+}
+
+.welcome-row h2 {
+  margin: 0; color: v.$ink; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 3.3vw, 2.55rem); font-weight: 500; letter-spacing: -0.055em; line-height: 1.13;
+}
+
+.welcome-row h2 em {
+  color: v.$green; font-weight: 500;
+}
+
+.page-intro {
+  max-width: 540px; margin: 12px 0 0; color: v.$muted; font-size: 0.9rem; line-height: 1.65;
+}
+
+.button {
+  @include m.button-base;
+}
+
+.button-primary {
+  background: v.$green; color: white; box-shadow: 0 7px 15px rgba(45, 105, 87, 0.15);
+  &:hover { background: v.$green-dark; }
+}
+
+.button-quiet {
+  border: 1px solid v.$line; background: white; color: #67716c;
+}
+
+.create-button {
+  flex: 0 0 auto; min-height: 47px; padding: 0 18px;
+}
+
+.create-button span {
+  font-size: 1.18rem; font-weight: 400;
+}
+
+.count-badge {
+  display: inline-grid; min-width: 25px; height: 23px; place-items: center; padding: 0 7px; border-radius: 8px; background: #edf1ec; color: #63736a; font: 650 0.68rem/1 system-ui, sans-serif;
+}
+
+.icon-button {
+  display: inline-grid; width: 28px; height: 28px; place-items: center; border: 0; border-radius: 7px; background: transparent; color: #7f8b83; font: inherit; font-size: 0.9rem; cursor: pointer;
+}
+
+.icon-button:hover {
+  background: #f1f3f0; color: v.$ink;
+}
+
+.danger-action:hover {
+  background: #fff0ef; color: v.$danger;
+}
+
+.text-button {
+  border: 0; background: none; color: inherit; font: inherit; font-size: 0.75rem; font-weight: 700; text-decoration: underline; cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .welcome-row { align-items: flex-start; flex-direction: column; margin-bottom: 30px; }
+.create-button { width: 100%; }
+}
+
+.compact-welcome {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 520px) {
+  .compact-welcome { margin-bottom: 24px; }
+}

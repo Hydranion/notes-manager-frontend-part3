@@ -1,0 +1,33 @@
+@use '../variables' as v;
+
+.filter-panel {
+  display: flex; gap: 10px; margin-bottom: 22px;
+}
+
+.search-box {
+  display: flex; min-width: 220px; flex: 1; align-items: center; gap: 10px; height: 45px; padding: 0 12px; border: 1px solid v.$line; border-radius: 11px; background: white;
+  input {
+    width: 100%; border: 0; outline: 0; background: transparent; color: v.$ink; font: inherit; font-size: 0.81rem;
+    &::placeholder { color: #a5ada7; }
+  }
+  &:focus-within { border-color: #9eb9aa; box-shadow: 0 0 0 3px rgba(45, 105, 87, 0.08); }
+}
+
+.search-icon {
+  color: #849087; font-size: 1.45rem; line-height: 1; transform: rotate(-20deg);
+}
+
+kbd {
+  flex: 0 0 auto; padding: 3px 5px; border: 1px solid v.$line; border-radius: 5px; color: #9ca49e; font: 0.62rem system-ui, sans-serif;
+}
+
+.select-wrap select {
+  max-width: 180px; height: 45px; padding: 0 32px 0 12px; border: 1px solid v.$line; border-radius: 11px; background: white; color: #68736d; font: inherit; font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .filter-panel { flex-wrap: wrap; }
+.search-box { min-width: 100%; }
+.select-wrap { flex: 1; }
+.select-wrap select { width: 100%; max-width: none; }
+}

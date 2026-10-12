@@ -1,0 +1,55 @@
+@use '../variables' as v;
+
+.about-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+}
+
+.about-card {
+  min-height: 185px; padding: 19px; border: 1px solid v.$line; border-radius: 15px; background: white;
+}
+
+.about-card-main {
+  grid-column: 1 / -1; min-height: 215px; padding: 25px; background: linear-gradient(135deg, #f7faf6, #eef5ee);
+}
+
+.about-symbol {
+  display: grid; width: 39px; height: 39px; place-items: center; border-radius: 12px; background: v.$green; color: white; font-family: Georgia, serif; font-size: 1.7rem;
+}
+
+.about-card h2 {
+  margin: 15px 0 8px; font-family: Georgia, serif; font-size: 1.42rem; font-weight: 500;
+}
+
+.about-card h3 {
+  margin: 27px 0 7px; font-family: Georgia, serif; font-size: 1.05rem; font-weight: 600;
+}
+
+.about-card p {
+  max-width: 660px; color: v.$muted; font-size: 0.78rem; line-height: 1.65;
+}
+
+.about-tags {
+  display: flex; gap: 7px; margin-top: 15px;
+}
+
+.about-tags span {
+  padding: 6px 9px; border-radius: 7px; background: #e5efe7; color: #527460; font-size: 0.67rem;
+}
+
+.about-number {
+  color: #9bb2a0; font-family: Georgia, serif; font-size: 0.85rem;
+}
+
+.about-footnote {
+  margin-top: 18px; color: #939c95; font-size: 0.72rem;
+}
+
+@media (max-width: 850px) {
+  .about-grid { grid-template-columns: 1fr 1fr; }
+.about-card-main { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .about-grid { grid-template-columns: 1fr; }
+.about-card-main { grid-column: auto; }
+}

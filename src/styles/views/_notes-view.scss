@@ -1,0 +1,75 @@
+@use '../variables' as v;
+
+.section-heading {
+  display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-bottom: 17px;
+}
+
+.section-heading h2 {
+  display: flex; align-items: center; gap: 10px; margin: 0; font-family: Georgia, serif; font-size: 1.4rem; font-weight: 500; letter-spacing: -0.04em;
+}
+
+.section-heading p {
+  margin: 6px 0 0; color: v.$muted; font-size: 0.78rem;
+}
+
+.sort-label {
+  color: #8e9891; font-size: 0.73rem;
+}
+
+.sort-label span {
+  margin-left: 5px;
+}
+
+.note-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px;
+}
+
+.empty-state, .loading-state {
+  display: flex; min-height: 285px; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+
+.empty-state h3 {
+  margin: 10px 0 5px; font-family: Georgia, serif; font-size: 1.35rem; font-weight: 500;
+}
+
+.empty-state p {
+  max-width: 350px; margin: 0 0 17px; color: v.$muted; font-size: 0.81rem; line-height: 1.6;
+}
+
+.empty-illustration {
+  position: relative; display: grid; width: 74px; height: 74px; place-items: center; border-radius: 23px; background: #e8f1eb; color: v.$green; font-size: 1.8rem; transform: rotate(-5deg);
+}
+
+.empty-illustration i, .empty-illustration b {
+  position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #c7a86b;
+}
+
+.empty-illustration i {
+  top: -5px; right: 2px;
+}
+
+.empty-illustration b {
+  bottom: -7px; left: 4px; width: 5px; height: 5px; background: #98b3a0;
+}
+
+.loading-state {
+  min-height: 220px; gap: 10px; color: v.$muted; font-size: 0.8rem;
+}
+
+.loader {
+  width: 25px; height: 25px; border: 2px solid #dae5dd; border-top-color: v.$green; border-radius: 50%; animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1080px) {
+  .note-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .section-heading { align-items: flex-start; flex-direction: column; }
+.sort-label { display: none; }
+.note-grid { grid-template-columns: 1fr; }
+}

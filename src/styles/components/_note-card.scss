@@ -1,0 +1,58 @@
+@use '../variables' as v;
+
+.note-card {
+  display: flex; min-height: 218px; flex-direction: column; padding: 17px 17px 14px; border: 1px solid v.$line; border-radius: 15px; background: white; transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.note-card:hover {
+  transform: translateY(-2px); border-color: #dbe5dc; box-shadow: v.$shadow-soft;
+}
+
+.note-card-top {
+  display: flex; min-height: 26px; align-items: center; justify-content: space-between;
+}
+
+.category-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 7px; background: #f0eefb; color: #766ba2; font-size: 0.64rem;
+}
+
+.category-chip i {
+  width: 5px; height: 5px; border-radius: 50%; background: #9386ce;
+}
+
+.card-actions {
+  display: flex; gap: 2px; opacity: 0.15; transition: opacity 120ms ease;
+}
+
+.note-card:hover .card-actions, .card-actions:focus-within {
+  opacity: 1;
+}
+
+.note-card h3 {
+  display: -webkit-box; overflow: hidden; margin: 15px 0 8px; color: v.$ink; font-family: Georgia, serif; font-size: 1.06rem; font-weight: 600; letter-spacing: -0.025em; line-height: 1.35; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+}
+
+.note-excerpt {
+  display: -webkit-box; overflow: hidden; margin: 0; color: #7d8780; font-size: 0.77rem; line-height: 1.65; white-space: pre-wrap; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+}
+
+.note-card-bottom {
+  display: flex; align-items: end; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 14px;
+}
+
+.tag-list {
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+
+.tag-chip {
+  padding: 4px 6px; border-radius: 6px; background: #eef5ef; color: #5d806c; font-size: 0.61rem;
+}
+
+.note-card time {
+  flex: 0 0 auto; color: #a3aba5; font-size: 0.62rem;
+}
+
+@media (max-width: 640px) {
+  .note-card { min-height: 195px; }
+.card-actions { opacity: 1; }
+}

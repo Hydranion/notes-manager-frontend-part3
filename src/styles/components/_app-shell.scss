@@ -1,0 +1,37 @@
+@use '../variables' as v;
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.main-area {
+  min-height: 100vh; margin-left: 252px;
+}
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between; min-height: 82px; padding: 15px clamp(24px, 5vw, 72px); border-bottom: 1px solid v.$line; background: rgba(251, 252, 250, 0.9);
+}
+
+.topbar h1 {
+  margin: 3px 0 0; font-family: Georgia, serif; font-size: 1.08rem; font-weight: 600;
+}
+
+.topbar-mark {
+  display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid v.$line; border-radius: 50%; color: v.$green;
+}
+
+.page-content {
+  width: min(100%, 1280px); margin: 0 auto; padding: 38px clamp(24px, 5vw, 72px) 64px;
+}
+
+@media (max-width: 800px) {
+  .main-area { margin-left: 74px; }
+.page-content { padding: 28px 22px 48px; }
+.topbar { padding: 14px 22px; }
+}
+
+@media (max-width: 520px) {
+  .main-area { margin-left: 0; }
+.topbar { min-height: 68px; }
+.page-content { padding: 25px 16px 40px; }
+}

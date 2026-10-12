@@ -1,0 +1,32 @@
+@use 'variables' as v;
+
+@mixin focus-ring {
+  outline: 3px solid rgba(45, 105, 87, 0.24);
+  outline-offset: 2px;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 0;
+  border-radius: 11px;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  &:hover { transform: translateY(-1px); }
+  &:focus-visible { @include focus-ring; }
+  &:disabled { opacity: 0.6; cursor: wait; transform: none; }
+}
+
+@mixin panel {
+  border: 1px solid v.$line;
+  border-radius: v.$radius-card;
+  background: v.$surface;
+  box-shadow: v.$shadow-soft;
+}

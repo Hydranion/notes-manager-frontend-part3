@@ -1,0 +1,71 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.note-form select {
+  max-width: 180px; height: 45px; padding: 0 32px 0 12px; border: 1px solid v.$line; border-radius: 11px; background: white; color: #68736d; font: inherit; font-size: 0.75rem;
+}
+
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 18px; background: rgba(30, 40, 35, 0.42); backdrop-filter: blur(3px);
+}
+
+.note-modal {
+  width: min(100%, 610px); max-height: min(90vh, 850px); overflow: auto; padding: 25px; border: 1px solid rgba(255,255,255,.5); border-radius: 20px; background: #fff; box-shadow: 0 30px 90px rgba(20, 35, 28, .22);
+}
+
+.modal-heading {
+  display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 21px;
+}
+
+.modal-heading h2 {
+  margin: 5px 0 0; font-family: Georgia, serif; font-size: 1.55rem; font-weight: 500; letter-spacing: -0.035em;
+}
+
+.modal-close {
+  width: 34px; height: 34px; font-size: 1.3rem;
+}
+
+.note-form {
+  display: grid; gap: 14px;
+}
+
+.note-form label {
+  display: grid; gap: 7px; color: #53615a; font-size: 0.76rem; font-weight: 650;
+}
+
+.note-form input, .note-form textarea, .note-form select {
+  width: 100%; border: 1px solid v.$line; border-radius: 10px; padding: 11px 12px; background: #fcfdfb; color: v.$ink; font: inherit; font-size: 0.82rem;
+}
+
+.note-form input:focus, .note-form textarea:focus, .note-form select:focus {
+  @include m.focus-ring; border-color: #9eb9aa; outline-offset: 0;
+}
+
+.note-form textarea {
+  resize: vertical; line-height: 1.6;
+}
+
+.note-form select {
+  max-width: unset; height: auto;
+}
+
+.form-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 13px;
+}
+
+.form-row select[multiple] {
+  min-height: 85px;
+}
+
+.form-hint {
+  margin: -6px 0 0; color: v.$muted; font-size: 0.68rem;
+}
+
+.modal-actions {
+  display: flex; justify-content: flex-end; gap: 8px; margin-top: 7px;
+}
+
+@media (max-width: 520px) {
+  .note-modal { padding: 20px 16px; }
+.form-row { grid-template-columns: 1fr; }
+}
